@@ -30,6 +30,11 @@ const main = async () => {
     const findUnique = await prisma.post.findUniqueOrThrow({
         where:{
             id:3
+        },
+        select:{
+            title:true,
+            content:true,
+            authorName:true
         }
     })
 
