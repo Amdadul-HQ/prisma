@@ -68,14 +68,25 @@ const main = async () => {
             content:"This is first post with content",
             authorId:1,
             postCategory:{
-                create:{
-                    categoryId:3
+                // create:{
+                    // categoryId:3
                     // category:{
                     //     connect:{
                     //         id:1
                     //     }
                     // }
-                }
+                // }
+                create:[
+                    {
+                        categoryId:3
+                    },
+                    {
+                        categoryId:2
+                    },
+                    {
+                        categoryId:1
+                    },
+                ]
             }
         },
         include:{
