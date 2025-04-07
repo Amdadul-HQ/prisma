@@ -55,3 +55,10 @@ model Category {
 
   @@map("categoryis")
 }
+
+model PostCategory {
+  postId          Int 
+  categoryId      Int
+  
+  @@id([postId,categoryId])
+}
