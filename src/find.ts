@@ -34,7 +34,7 @@ const main = async () => {
         select:{
             title:true,
             content:true,
-            authorName:true
+            authorId:true
         }
     })
 
