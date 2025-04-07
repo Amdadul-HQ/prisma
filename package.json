@@ -14,6 +14,7 @@
     "prisma:gen":"npx prisma generate",
     "prisma:dbprint":"npx prisma db pull --print",
     "prisma:dbpull":"npx prisma db pull",
+    "prisma:dbpush":"npx prisma db push",
     "studio":"npx prisma studio"
   },
   "keywords": [],
