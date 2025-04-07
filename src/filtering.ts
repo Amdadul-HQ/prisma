@@ -87,17 +87,35 @@ const filtering = async () => {
     // })
 
     // console.log(equal);
-    const userNameArray = ['user1','user2']
+    // const userNameArray = ['user1','user2']
 
-    const userNames = await prisma.user.findMany({
+    // const userNames = await prisma.user.findMany({
+    //     where:{
+    //         userName:{
+    //             in:userNameArray
+    //         }
+    //     }
+    // })
+
+    // console.log(userNames);
+
+    const indeptData= await prisma.user.findUnique({
         where:{
-            userName:{
-                in:userNameArray
+            id:3
+        },
+        include:{
+            post:{
+                include:{
+                    postCategory:{
+                        include:{
+                            category:true
+                        }
+                    }
+                }
             }
         }
     })
-
-    console.log(userNames);
+    console.dir(indeptData,{depth:Infinity});
 }
 
 
