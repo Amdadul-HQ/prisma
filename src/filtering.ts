@@ -58,14 +58,36 @@ const filtering = async () => {
     
 
     // start wiht
-    const startWith = await prisma.user.findMany({
+    // const startWith = await prisma.user.findMany({
+    //     where:{
+    //         email:{
+    //             startsWith:'user1'
+    //         }
+    //     }
+    // })
+    // console.log(startWith);
+
+    // End with
+    //  const endWith = await prisma.user.findMany({
+    //     where:{
+    //         email:{
+    //             endsWith:'1@ph.com'
+    //         }
+    //     }
+    // })
+    // console.log(endWith);
+
+    // equal with
+    const equal = await prisma.user.findMany({
         where:{
-            email:{
-                startsWith:'user1'
+            role:{
+                equals:'user'
             }
         }
     })
-    console.log(startWith);
+
+    console.log(equal);
+
 }
 
 
