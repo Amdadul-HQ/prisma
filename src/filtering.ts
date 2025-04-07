@@ -78,16 +78,26 @@ const filtering = async () => {
     // console.log(endWith);
 
     // equal with
-    const equal = await prisma.user.findMany({
+    // const equal = await prisma.user.findMany({
+    //     where:{
+    //         role:{
+    //             equals:'user'
+    //         }
+    //     }
+    // })
+
+    // console.log(equal);
+    const userNameArray = ['user1','user2']
+
+    const userNames = await prisma.user.findMany({
         where:{
-            role:{
-                equals:'user'
+            userName:{
+                in:userNameArray
             }
         }
     })
 
-    console.log(equal);
-
+    console.log(userNames);
 }
 
 
