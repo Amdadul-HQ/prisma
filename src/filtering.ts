@@ -5,41 +5,56 @@ const prisma = new PrismaClient()
 const filtering = async () => {
 
     // And filtering
-    const andFiltering = await prisma.post.findMany({
-        where:{
-            AND:[
-                {
-                    title:{
-                        contains:"One"
-                    },
-                },
-                {
+    // const andFiltering = await prisma.post.findMany({
+    //     where:{
+    //         AND:[
+    //             {
+    //                 title:{
+    //                     contains:"One"
+    //                 },
+    //             },
+    //             {
                     
-                    published:true
-                }
-            ]
-        }
-    });
+    //                 published:true
+    //             }
+    //         ]
+    //     }
+    // });
 
-    console.log(andFiltering);
+    // console.log(andFiltering);
     //or filtering
-    const orFiltering = await prisma.post.findMany({
+    // const orFiltering = await prisma.post.findMany({
+    //     where:{
+    //         OR:[
+    //             {
+    //                 title:{
+    //                     contains:"One"
+    //                 },
+    //             },
+    //             {
+    //                 published:true
+    //             }
+
+    //         ]
+    //     }
+    // });
+
+    // console.log(orFiltering);
+
+    // not filtering
+    const notFiltering = await prisma.post.findMany({
         where:{
-            OR:[
+            NOT:[
                 {
                     title:{
                         contains:"One"
-                    },
-                },
-                {
-                    published:true
+                    }
                 }
-
             ]
         }
-    });
-
-    console.log(orFiltering);
+    })
+    
+    console.log(notFiltering);
     
 }
 
